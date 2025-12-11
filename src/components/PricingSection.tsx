@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Circle } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const tabs = ["Subscriptions", "Premium services"];
@@ -17,6 +17,12 @@ const plans = [
       "Collaborate with your law firms",
     ],
     isPopular: false,
+    bgColor: "#f2f5f6",
+    cardBg: "#fff",
+    textColor: "text-gray-900",
+    subtitleColor: "text-gray-400",
+    featureColor: "text-gray-600",
+    checkColor: "text-primary",
   },
   {
     name: "Professional",
@@ -30,6 +36,12 @@ const plans = [
       "Configurable investor and shareholder wallets",
     ],
     isPopular: true,
+    bgColor: "#272627",
+    cardBg: "#1a1a1a",
+    textColor: "text-white",
+    subtitleColor: "text-gray-500",
+    featureColor: "text-gray-400",
+    checkColor: "text-primary",
   },
   {
     name: "Growth",
@@ -43,6 +55,12 @@ const plans = [
       "Automated diligence for licensing and taxes",
     ],
     isPopular: false,
+    bgColor: "#f2f5f6",
+    cardBg: "#fff",
+    textColor: "text-gray-900",
+    subtitleColor: "text-gray-400",
+    featureColor: "text-gray-600",
+    checkColor: "text-primary",
   },
 ];
 
@@ -79,8 +97,8 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* Product Card */}
-        <div className="max-w-4xl mx-auto mb-10">
+        {/* Product Card - Full width within container */}
+        <div className="mb-6">
           <div className="bg-[#0f172a] rounded-3xl p-6 md:p-8 relative overflow-hidden">
             {/* Decorative circles */}
             <div className="absolute top-4 right-4 flex gap-2">
@@ -112,47 +130,50 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Pricing Cards - 3 columns fitting container */}
+        <div className="grid md:grid-cols-3 gap-4">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-6 bg-white border ${
-                plan.isPopular ? "border-primary/50 shadow-lg shadow-primary/10" : "border-gray-200"
-              }`}
+              className="rounded-2xl p-4"
+              style={{ backgroundColor: plan.bgColor }}
             >
-              {/* Plan tagline */}
-              <div className="mb-1">
-                <span className="text-gray-500 text-sm">{plan.tagline}</span>
-              </div>
-              
-              {/* Plan highlight */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                {plan.highlight}
-              </h3>
-
-              {/* CTA Button */}
-              <Button
-                variant={plan.isPopular ? "default" : "outline"}
-                className={`w-full rounded-full mb-6 ${
-                  plan.isPopular 
-                    ? "bg-primary text-white hover:bg-primary/90" 
-                    : "border-gray-300 text-gray-700 hover:bg-gray-50"
-                }`}
+              {/* Inner card with top content */}
+              <div 
+                className="rounded-xl p-5 mb-4"
+                style={{ backgroundColor: plan.cardBg }}
               >
-                Request Access
-              </Button>
+                {/* Plan name label */}
+                <div className={`text-xs uppercase tracking-wider mb-2 ${plan.subtitleColor}`}>
+                  {plan.name}
+                </div>
+                
+                {/* Plan tagline and highlight */}
+                <div className="mb-4">
+                  <span className={`text-sm ${plan.subtitleColor}`}>{plan.tagline} </span>
+                  <span className={`text-lg font-semibold ${plan.textColor}`}>
+                    {plan.highlight}
+                  </span>
+                </div>
 
-              {/* Plan name label */}
-              <div className="text-xs text-gray-400 uppercase tracking-wider mb-3">
-                {plan.name}
+                {/* CTA Button */}
+                <Button
+                  variant={plan.isPopular ? "default" : "outline"}
+                  className={`w-full rounded-full ${
+                    plan.isPopular 
+                      ? "bg-primary text-white hover:bg-primary/90" 
+                      : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                  }`}
+                >
+                  Request Access
+                </Button>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3">
+              <ul className="space-y-3 px-2">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <li key={idx} className={`flex items-start gap-3 text-sm ${plan.featureColor}`}>
+                    <Check className={`w-4 h-4 ${plan.checkColor} flex-shrink-0 mt-0.5`} />
                     {feature}
                   </li>
                 ))}
