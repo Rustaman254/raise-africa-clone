@@ -20,14 +20,14 @@ const painPoints = [
 
 const MessyEquitySection = () => {
   return (
-    <section className="py-24 relative light bg-[hsl(0,0%,98%)]">
+    <section className="py-24 bg-white">
       <div className="container">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-[hsl(225,30%,10%)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
             Messy equity slows you down
           </h2>
-          <p className="text-lg text-[hsl(220,10%,45%)]">
+          <p className="text-lg text-gray-600">
             Managing multiple companies, lawyers, and shareholders is expensive. Mistakes happen, legal debt builds up and it slows you down.
           </p>
         </div>
@@ -46,10 +46,10 @@ const MessyEquitySection = () => {
           {painPoints.map((point, index) => (
             <div key={index} className="text-center md:text-left">
               <div className="text-4xl mb-4">{point.emoji}</div>
-              <h3 className="text-xl font-semibold text-[hsl(225,30%,10%)] mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {point.title}
               </h3>
-              <p className="text-[hsl(220,10%,45%)] text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 {point.description}
               </p>
             </div>

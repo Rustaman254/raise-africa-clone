@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const tabs = ["Subscriptions", "Premium services"];
 
@@ -51,95 +50,108 @@ const PricingSection = () => {
   const [activeTab, setActiveTab] = useState("Subscriptions");
 
   return (
-    <section id="pricing" className="py-24 relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-
-      <div className="container relative z-10">
+    <section id="pricing" className="py-24 bg-white">
+      <div className="container">
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
             Pay as you grow
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-gray-600">
             Choose the right mix of products and services, customizable per industry and stage.
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-2 mb-12">
+        <div className="flex justify-center gap-1 mb-10">
           {tabs.map((tab) => (
-            <Button
+            <button
               key={tab}
-              variant={activeTab === tab ? "default" : "ghost"}
-              size="sm"
               onClick={() => setActiveTab(tab)}
-              className={`rounded-full ${
+              className={`px-5 py-2 text-sm font-medium rounded-full transition-all ${
                 activeTab === tab
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               {tab}
-            </Button>
+            </button>
           ))}
         </div>
 
-        {/* Product badge */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-border/50 rounded-full px-4 py-2">
-            <span className="text-primary text-sm font-medium">product</span>
-            <span className="text-muted-foreground text-sm">
+        {/* Product Card */}
+        <div className="max-w-4xl mx-auto mb-10">
+          <div className="bg-[#0f172a] rounded-3xl p-6 md:p-8 relative overflow-hidden">
+            {/* Decorative circles */}
+            <div className="absolute top-4 right-4 flex gap-2">
+              <div className="w-12 h-12 rounded-full bg-blue-500/20" />
+              <div className="w-8 h-8 rounded-full bg-blue-400/30 -ml-4 mt-2" />
+            </div>
+            
+            <div className="flex items-center gap-2 mb-4">
+              <div className="bg-primary/20 px-3 py-1 rounded-full">
+                <span className="text-primary text-sm font-medium">✦ product</span>
+              </div>
+            </div>
+            
+            <p className="text-gray-400 text-sm max-w-md">
               Magical, simple and helpful dashboards designed for your industry and stage. Billed as a subscription.
-            </span>
+            </p>
+
+            {/* Feature pills */}
+            <div className="flex flex-wrap gap-2 mt-6">
+              {["Valuation", "Scenarios", "Audits", "Ownership"].map((feature) => (
+                <span
+                  key={feature}
+                  className="bg-white/10 border border-white/10 rounded-full px-4 py-1.5 text-sm text-gray-300"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Feature pills */}
-        <div className="flex justify-center flex-wrap gap-2 mb-12">
-          {["Valuation", "Scenarios", "Audits", "Ownership"].map((feature) => (
-            <span
-              key={feature}
-              className="bg-secondary/30 border border-border/30 rounded-full px-4 py-1 text-sm text-muted-foreground"
-            >
-              {feature}
-            </span>
-          ))}
-        </div>
-
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-6 ${
-                plan.isPopular
-                  ? "bg-gradient-to-b from-primary/20 to-card border-primary/30"
-                  : "bg-card/50"
-              } border border-border/30 backdrop-blur-sm`}
+              className={`relative rounded-2xl p-6 bg-white border ${
+                plan.isPopular ? "border-primary/50 shadow-lg shadow-primary/10" : "border-gray-200"
+              }`}
             >
-              {/* Plan name */}
-              <div className="text-sm text-muted-foreground mb-2">{plan.name}</div>
+              {/* Plan tagline */}
+              <div className="mb-1">
+                <span className="text-gray-500 text-sm">{plan.tagline}</span>
+              </div>
               
-              {/* Tagline */}
-              <h3 className="text-xl font-semibold text-foreground mb-6">
-                <span className="text-muted-foreground font-normal">{plan.tagline}</span>{" "}
-                <span className="text-foreground">{plan.highlight}</span>
+              {/* Plan highlight */}
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                {plan.highlight}
               </h3>
 
               {/* CTA Button */}
               <Button
-                variant={plan.isPopular ? "hero" : "outline"}
-                className="w-full rounded-full mb-6"
+                variant={plan.isPopular ? "default" : "outline"}
+                className={`w-full rounded-full mb-6 ${
+                  plan.isPopular 
+                    ? "bg-primary text-white hover:bg-primary/90" 
+                    : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                }`}
               >
-                <img src={whatsappIcon} alt="" className="w-4 h-4 mr-2" />
                 Request Access
               </Button>
+
+              {/* Plan name label */}
+              <div className="text-xs text-gray-400 uppercase tracking-wider mb-3">
+                {plan.name}
+              </div>
 
               {/* Features */}
               <ul className="space-y-3">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600">
                     <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     {feature}
                   </li>
