@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Play, Share2 } from "lucide-react";
+import { Play, CheckCircle } from "lucide-react";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 import heroDashboard from "@/assets/hero-dashboard-main.png";
 
@@ -19,7 +19,7 @@ const Distribute = () => {
           {/* Product Badge */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <div className="w-8 h-8 bg-[#25D366] rounded-lg flex items-center justify-center">
-              <Share2 className="w-5 h-5 text-white" />
+              <CheckCircle className="w-5 h-5 text-white" />
             </div>
             <span className="text-2xl font-semibold text-gray-900">
               distribute
@@ -70,334 +70,146 @@ const Distribute = () => {
         </div>
       </section>
 
-      {/* Features Section - Dark Blue */}
+      {/* Section 3: Distribute Digital Equity - Dark Background */}
       <section className="py-20 bg-[#181818] text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Left - Investment Card */}
             <div className="relative">
-              <div className="relative" style={{ paddingLeft: "40px" }}>
-                <div className="absolute top-0 left-0 w-full bg-[#181818] border border-gray-400 rounded-2xl p-6 h-64" />
-                <div className="relative bg-[#181818] border border-gray-400 rounded-2xl p-6 h-64 mt-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500" />
-                    <span className="text-white text-lg font-semibold">
-                      Cap Table
-                    </span>
+              <div className="bg-[#181818] border border-gray-400 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
+                    <div
+                      className="w-full h-full bg-cover"
+                      style={{
+                        backgroundImage:
+                          "url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop')",
+                      }}
+                    />
                   </div>
-                  <div className="bg-[#222222] rounded-xl p-4 mb-4">
-                    
-                    <p className="text-gray-400 text-sm mb-1">
-                      Total Shares
+                  <div>
+                    <h3 className="text-white text-lg font-semibold">
+                      Amarachi Eze
+                    </h3>
+                    <p className="text-gray-400 text-sm">
+                      will receive SF-1 (SAFE)
                     </p>
-                    <p className="text-white text-2xl font-bold">1,000,000</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400 text-sm">Investment amount</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-semibold">$25,000</span>
+                      <div className="w-4 h-4 bg-primary rounded"></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400 text-sm">Valuation Cap</span>
+                    <span className="text-white font-semibold">$300,000</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400 text-sm">Type</span>
+                    <span className="text-white font-semibold">Post Money</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400 text-sm">Discount</span>
+                    <span className="text-white font-semibold">10%</span>
+                  </div>
+                  <div className="pt-3 border-t border-gray-400">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400 text-sm">Total value</span>
+                      <span className="text-white text-lg font-bold">$125,000</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* Content */}
+
+            {/* Right - Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                
                 Distribute digital equity to your shareholders
               </h2>
-              <div className="bg-[#181818] border border-gray-400 rounded-2xl overflow-hidden">
-                
-                {/* Top section - For Founders */}
-                <div className="p-6 border-b border-gray-400">
-                  
-                  <div className="flex items-center gap-3 mb-3">
-                    
-                    <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center">
-                      
-                      <span className="text-white text-sm">👥</span>
-                    </div>
-                    <h3 className="font-semibold text-white text-lg">
-                      For founders
-                    </h3>
-                  </div>
-                  <p className="text-gray-400 text-sm">
-                    
-                    Align your co-founders vesting and common shares - so
-                    everyone is on the same page.
-                  </p>
-                </div>
-                {/* Bottom section - Split */}
-                <div className="grid grid-cols-2">
-                  
-                  {/* For Investors */}
-                  <div className="p-6 border-r border-gray-200">
-                    
-                    <div className="flex items-center gap-2 mb-2">
-                      
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                        
-                        <span className="text-white text-xs">💰</span>
-                      </div>
-                      <h3 className="font-semibold text-white text-sm">
-                        For investors
-                      </h3>
-                    </div>
-                    <p className="text-gray-400 text-xs">
-                      
-                      Help investors model returns and growth opportunities.
-                    </p>
-                  </div>
-                  {/* For Employees */}
-                  <div className="p-6">
-                    
-                    <div className="flex items-center gap-2 mb-2">
-                      
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                        
-                        <span className="text-white text-xs">👔</span>
-                      </div>
-                      <h3 className="font-semibold text-white text-sm">
-                        For employees
-                      </h3>
-                    </div>
-                    <p className="text-gray-400 text-xs">
-                      
-                      Align your employee's ownership with your growth plans.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How it works Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Left content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Manage equity
-                <br />
-                the modern way
-              </h2>
-              <p className="text-gray-500 mb-6">
-                Create, distribute, and track equity for all your stakeholders
-                in one simple platform.
-              </p>
-              <a
-                href="https://wa.me/254799598541"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-primary text-white rounded-lg px-6 py-3 h-auto"
-              >
-                Request Access
-              </a>
-            </div>
-
-            {/* Right - Feature cards */}
-            <div className="space-y-4">
-              {/* Card 1 */}
-              <div className="bg-[#f2f5f6] rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-gray-500 text-sm">New shareholder added</p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    Dr. Josephine Obi
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-500">Ownership</p>
-                  <p className="text-lg font-bold text-gray-900">2.05%</p>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="bg-[#f2f5f6] rounded-2xl p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <div
-                      className="w-full h-full bg-cover"
-                      style={{
-                        backgroundImage:
-                          "url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop')",
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">
-                      Damola Akinade
-                    </p>
-                    <p className="text-xs text-gray-500">received options</p>
-                    <p className="text-lg font-bold text-gray-900">
-                      50,000 shares
-                    </p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-500">Vesting</p>
-                  <p className="text-lg font-bold text-[#25D366]">4 years</p>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="bg-[#f2f5f6] rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-gray-500 text-sm">ESOP pool created</p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    150,000 shares
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <div
-                      className="w-full h-full bg-cover"
-                      style={{
-                        backgroundImage:
-                          "url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop')",
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">
-                      Team allocation
-                    </p>
-                    <p className="text-xs text-gray-500">15% of total</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Track & Manage Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Phone mockup */}
-            <div className="relative">
-              <div
-                className="bg-[#1a1a1a] rounded-[2.5rem] p-3 shadow-2xl mx-auto"
-                style={{ maxWidth: "260px" }}
-              >
-                <div className="bg-[#232323] rounded-[2rem] p-4 min-h-[450px]">
-                  <div className="text-left mb-4">
-                    <h3 className="text-white text-lg font-bold">
-                      Transactions
-                    </h3>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      {
-                        action: "Issued shares to",
-                        name: "John Doe",
-                        amount: "10,000",
-                      },
-                      {
-                        action: "Vested options for",
-                        name: "Jane Smith",
-                        amount: "5,000",
-                      },
-                      {
-                        action: "Created ESOP grant",
-                        name: "New hire",
-                        amount: "2,500",
-                      },
-                    ].map((tx, i) => (
-                      <div key={i} className="bg-[#2a2a2a] rounded-xl p-3">
-                        <p className="text-gray-400 text-xs">{tx.action}</p>
-                        <p className="text-white text-sm font-medium">
-                          {tx.name}
-                        </p>
-                        <p className="text-[#25D366] text-sm">
-                          {tx.amount} shares
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Track every equity
-                <br />
-                transaction
-              </h2>
-              <p className="text-gray-400 text-lg mb-2">Issue new shares</p>
-              <p className="text-gray-400 text-lg mb-2">
-                Track vesting schedules
-              </p>
-              <p className="text-gray-900 font-semibold text-lg">
-                Manage cap table updates
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Distribute & Wallet Section - Dark */}
-      <section className="py-20 bg-[#0a1628]">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Distribute side */}
-            <div className="text-white">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-[#25D366] rounded-full" />
-                <span className="text-gray-400">distribute</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-6">
-                Send and manage equity
-                <br />
-                across your captable
-              </h3>
-              <a
-                href="https://wa.me/254799598541"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg text-white border-white/20 bg-transparent hover:bg-white/10 px-6 py-3"
-              >
-                Learn more
-              </a>
-
-              {/* Mini cap table */}
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center justify-between p-3 border-b border-white/10">
-                  <span className="text-gray-400 text-sm">
-                    Shareholder name
-                  </span>
-                  <span className="text-gray-400 text-sm">%</span>
-                </div>
+              <div className="space-y-6">
                 {[
-                  { name: "Dr Josephine Obi", pct: "2.05%" },
-                  { name: "Damola Akinade", pct: "1.30%" },
-                  { name: "Jonathan Swanson", pct: "0.95%" },
-                  { name: "Edith Shonibare", pct: "0.55%" },
-                ].map((row, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between p-3 border-b border-white/10"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#25D366] rounded-full" />
-                      <span className="text-white text-sm">{row.name}</span>
+                  {
+                    color: "bg-[#25D366]",
+                    icon: "🏠",
+                    title: "For founders",
+                    description: "Align your co-founders vesting and common shares - so everyone is on the same page.",
+                  },
+                  {
+                    color: "bg-primary",
+                    icon: "💰",
+                    title: "For investors",
+                    description: "Help investors model returns and growth opportunities for their money.",
+                  },
+                  {
+                    color: "bg-primary",
+                    icon: "👔",
+                    title: "For employees",
+                    description: "Align your employee's ownership with your growth plans.",
+                  },
+                ].map((feature, i) => (
+                  <div key={i} className="bg-[#181818] border border-gray-400 rounded-2xl p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-10 h-10 ${feature.color} rounded-full flex items-center justify-center`}>
+                        <span className="text-white text-lg">{feature.icon}</span>
+                      </div>
+                      <h3 className="font-semibold text-white text-lg">
+                        {feature.title}
+                      </h3>
                     </div>
-                    <span className="text-white text-sm">{row.pct}</span>
+                    <p className="text-gray-400 text-sm">{feature.description}</p>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Wallet side */}
-            <div className="bg-[#1a2a3a] rounded-3xl p-6">
+      {/* Section 4: Control and Wealth Building - White Background */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Left - Small dashboard screenshot */}
+            <div className="relative">
+              <div className="max-w-xs mx-auto relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border-2 border-teal-400/30">
+                  <img
+                    src={heroDashboard}
+                    alt="Dashboard preview"
+                    className="w-full h-auto object-cover block opacity-90"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Text phrases */}
+            <div className="space-y-6">
+              <p className="text-gray-400 text-2xl md:text-3xl">You're in control</p>
+              <p className="text-gray-400 text-2xl md:text-3xl">Distribute in clicks</p>
+              <p className="text-gray-900 font-bold text-2xl md:text-3xl">Build wealth</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Feature Cards - Wallet and Distribute - White Background */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Wallet Card */}
+            <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-lg">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 bg-[#25D366] rounded-full" />
-                <span className="text-gray-400">wallet</span>
+                <span className="text-gray-400 text-sm">wallet</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                See your equity in
-                <br />
-                one place
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                See your equity in one place
               </h3>
               <a
                 href="https://wa.me/254799598541"
@@ -407,40 +219,85 @@ const Distribute = () => {
               >
                 Learn More
               </a>
-
-              {/* Wallet preview */}
-              <div className="bg-[#232323] rounded-2xl p-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-white text-sm font-medium">Wallet</span>
+              
+              {/* Phone mockup */}
+              <div className="bg-[#1a1a1a] rounded-[2.5rem] p-3 shadow-2xl" style={{ maxWidth: '280px' }}>
+                <div className="bg-[#232323] rounded-[2rem] p-4 min-h-[400px]">
+                  <div className="text-left mb-4">
+                    <h4 className="text-white text-lg font-bold">Wallet</h4>
+                  </div>
+                  <div className="bg-gradient-to-r from-[#2a2a2a] to-[#333] rounded-xl p-4 mb-4 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500" />
+                    <div>
+                      <p className="text-gray-400 text-xs">Your entire portfolio is worth</p>
+                      <p className="text-white text-2xl font-bold">$900,000.00</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-3">
-                  {[
-                    {
-                      name: "Finlence Inc",
-                      type: "SAFE",
-                      value: "300,000 USD",
-                    },
-                    { name: "Tracka", type: "SAFE", value: "300,000 USD" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-500" />
-                        <div>
-                          <p className="text-white text-xs">{item.name}</p>
-                          <p className="text-gray-500 text-xs">{item.type}</p>
+              </div>
+            </div>
+
+            {/* Distribute Card */}
+            <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-lg">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 bg-[#25D366] rounded-full" />
+                <span className="text-gray-400 text-sm">distribute</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Send and manage equity across your captable
+              </h3>
+              <a
+                href="https://wa.me/254799598541"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-primary text-white rounded-lg px-4 py-2 h-auto text-sm mb-6"
+              >
+                Learn More
+              </a>
+              
+              {/* Desktop mockup */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                <div className="bg-white p-4 border-b border-gray-200">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-4 min-h-[300px]">
+                  <div className="flex gap-4">
+                    {/* Sidebar */}
+                    <div className="w-1/4 space-y-2">
+                      <div className="bg-primary/10 rounded-lg p-2">
+                        <p className="text-xs font-medium text-primary">Step 1</p>
+                      </div>
+                      <div className="bg-gray-200 rounded-lg p-2">
+                        <p className="text-xs text-gray-500">Step 2</p>
+                      </div>
+                      <div className="bg-gray-200 rounded-lg p-2">
+                        <p className="text-xs text-gray-500">Step 3</p>
+                      </div>
+                    </div>
+                    {/* Main content */}
+                    <div className="flex-1 space-y-3">
+                      <div className="bg-white rounded-lg p-4 border border-gray-200">
+                        <p className="text-sm font-medium text-gray-900 mb-2">Asset Types</p>
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-[#25D366] rounded-full"></div>
+                            <span className="text-xs text-gray-600">Common Shares</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-[#25D366] rounded-full"></div>
+                            <span className="text-xs text-gray-600">Preference Shares</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-[#25D366] rounded-full"></div>
+                            <span className="text-xs text-gray-600">Stock Options</span>
+                          </div>
                         </div>
                       </div>
-                      <p className="text-white text-xs">{item.value}</p>
                     </div>
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-red-500" />
-                  <div>
-                    <p className="text-gray-400 text-xs">
-                      Your portfolio is worth
-                    </p>
-                    <p className="text-white text-lg font-bold">$600,000.00</p>
                   </div>
                 </div>
               </div>
@@ -449,8 +306,8 @@ const Distribute = () => {
         </div>
       </section>
 
-      {/* Send & Manage Section - Dark */}
-      <section className="py-20 bg-[#1a1a1a]">
+      {/* Section 6: Send & Manage Multiple Assets - Dark Background */}
+      <section className="py-20 bg-[#1a1a1a] text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left content */}
@@ -489,7 +346,7 @@ const Distribute = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-3 h-3 bg-[#25D366] rounded-full mt-1.5 flex-shrink-0" />
+                  <div className="w-3 h-3 bg-primary rounded-full mt-1.5 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-white mb-1">
                       Preference Shares
@@ -503,94 +360,21 @@ const Distribute = () => {
               </div>
             </div>
 
-            {/* Right - Phone mockup */}
+            {/* Right - Common shares card */}
             <div className="relative">
-              <div
-                className="bg-[#232323] rounded-[2.5rem] p-3 shadow-2xl mx-auto"
-                style={{ maxWidth: "260px" }}
-              >
-                <div className="bg-[#2a2a2a] rounded-[2rem] p-4 min-h-[400px]">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-white text-sm font-medium">
-                      Cap Table
-                    </span>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      {
-                        name: "Founders",
-                        type: "Common",
-                        value: "600,000 shares",
-                      },
-                      {
-                        name: "Series A",
-                        type: "Preferred",
-                        value: "250,000 shares",
-                      },
-                      {
-                        name: "ESOP",
-                        type: "Options",
-                        value: "150,000 shares",
-                      },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center justify-between py-2 border-b border-white/10"
-                      >
-                        <div className="flex items-center gap-2">
-                          <div
-                            className={`w-6 h-6 rounded-full ${
-                              i === 0
-                                ? "bg-primary"
-                                : i === 1
-                                ? "bg-[#25D366]"
-                                : "bg-purple-500"
-                            }`}
-                          />
-                          <div>
-                            <p className="text-white text-xs">{item.name}</p>
-                            <p className="text-gray-500 text-xs">{item.type}</p>
-                          </div>
-                        </div>
-                        <p className="text-white text-xs">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#25D366]" />
-                    <div>
-                      <p className="text-gray-400 text-xs">
-                        Total shares issued
-                      </p>
-                      <p className="text-white text-xl font-bold">1,000,000</p>
-                    </div>
-                  </div>
+              <div className="bg-[#8B6F47] rounded-3xl p-6 shadow-2xl max-w-sm mx-auto">
+                <div className="mb-4">
+                  <span className="text-white/80 text-sm">Common shares</span>
                 </div>
+                <div className="mb-6">
+                  <p className="text-white text-3xl font-bold">25,000 shares</p>
+                </div>
+                <button className="w-full bg-white/10 border border-white/30 rounded-lg py-3 text-white text-sm font-medium hover:bg-white/20 transition-colors">
+                  View Details
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Organize CTA Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Make equity moves with Organize
-          </h2>
-          <p className="text-gray-600 mb-6">
-            With this second release, we’re selectively serving a few founders
-            to ensure we’re truly helpful. Priority to African teams operating
-            in fintech, e-commerce, agriculture &amp; climate.
-          </p>
-          <a
-            href="https://wa.me/254799598541"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-white rounded-lg px-6 py-3"
-          >
-            Request Access
-          </a>
         </div>
       </section>
 

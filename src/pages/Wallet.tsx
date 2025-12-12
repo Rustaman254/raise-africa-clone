@@ -28,16 +28,24 @@ const Wallet = () => {
           </h1>
           
           <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
-            Fin lence is where serious investors, founders and employees in African startups build their wealth.
+            Raise is where serious investors, founders and employees in African startups build their wealth.
           </p>
           
           {/* CTA Buttons */}
           <div className="flex items-center justify-center gap-4 mb-16">
-            <Button className="bg-primary text-white rounded-full px-6 py-3 h-auto flex items-center gap-2">
+            <a
+              href="https://wa.me/254799598541"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-white rounded-lg px-6 py-3"
+            >
               <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />
               Request Access
-            </Button>
-            <Button variant="outline" className="rounded-full px-6 py-3 h-auto flex items-center gap-2 border-gray-300 bg-white">
+            </a>
+            <Button
+              variant="outline"
+              className="rounded-lg px-6 py-3 !text-gray-500 h-auto flex items-center gap-2 border-gray-300 !hover:text-white-900 bg-white"
+            >
               <Play className="w-4 h-4" />
               Watch Demo
             </Button>
@@ -208,9 +216,14 @@ const Wallet = () => {
               <p className="text-gray-500 mb-6">
                 Consolidate all of your equity, SAFEs, options - and connect them all to your company's cap tables in real time.
               </p>
-              <Button className="bg-primary text-white rounded-full px-6 py-3 h-auto">
+              <a
+                href="https://wa.me/254799598541"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-primary text-white rounded-lg px-6 py-3 h-auto"
+              >
                 Request Access
-              </Button>
+              </a>
             </div>
             
             {/* Right - Equity cards */}
@@ -330,9 +343,14 @@ const Wallet = () => {
               <h3 className="text-2xl font-bold mb-6">
                 Send and manage equity<br />across your captable
               </h3>
-              <Button variant="outline" className="rounded-full text-white border-white/20 bg-transparent hover:bg-white/10">
+              <a
+                href="https://wa.me/254799598541"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg text-white border-white/20 bg-transparent hover:bg-white/10 px-6 py-3"
+              >
                 Learn more
-              </Button>
+              </a>
               
               {/* Mini cap table */}
               <div className="mt-8 space-y-4">
@@ -366,9 +384,14 @@ const Wallet = () => {
               <h3 className="text-xl font-bold text-white mb-2">
                 See your equity in<br />one place
               </h3>
-              <Button className="bg-primary text-white rounded-full px-4 py-2 h-auto text-sm mb-6">
+              <a
+                href="https://wa.me/254799598541"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-primary text-white rounded-lg px-4 py-2 h-auto text-sm mb-6"
+              >
                 Learn More
-              </Button>
+              </a>
               
               {/* Wallet preview */}
               <div className="bg-[#232323] rounded-2xl p-4">
